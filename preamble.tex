@@ -1,0 +1,59 @@
+\documentclass{beamer}
+
+% Theme and color
+\usetheme{Warsaw}
+\usepackage{xcolor}
+\graphicspath{{../template/}}
+\definecolor{neteeraBG}{RGB}{248,248,248}
+\definecolor{bannercolor}{RGB}{86,114,127}
+
+\setbeamercolor{structure}{fg=bannercolor, bg=neteeraBG}
+\setbeamercolor{background canvas}{fg=bannercolor, bg=neteeraBG}
+
+% Other packages
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[absolute,overlay]{textpos}
+
+% Metadata
+\title[Short Title]{Full Title of the Presentation}
+\author{Your Name}
+\date{\today}
+
+% Custom title slide with background image and bannercolor text
+\makeatletter
+\defbeamertemplate*{title page}{bg image positioned}
+{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[at=(current page.center), inner sep=0] {
+      \includegraphics[width=\paperwidth,height=\paperheight]{neteera_title.png}
+    };
+  \end{tikzpicture}
+
+  \begin{textblock*}{10cm}(2cm,6cm)
+    {\usebeamerfont{title}\color{bannercolor}\inserttitle\par}
+    \vskip0.3cm
+    {\usebeamerfont{author}\color{bannercolor}\insertauthor\par}
+    \vskip0.2cm
+    {\usebeamerfont{date}\color{bannercolor}\insertdate\par}
+  \end{textblock*}
+}
+\makeatother
+
+% Logo and banner only on normal slides
+\addtobeamertemplate{background}{
+  \ifbool{beamer@plainframe}{}{
+    % Logo (bottom-left)
+    \begin{textblock*}{4cm}(0.3cm,7.0cm)
+      \includegraphics[height=1.2cm]{neteera_logo.png}
+    \end{textblock*}
+    % Shortened horizontal rule above banner
+    \begin{textblock*}{9cm}(3.5cm,7.75cm)
+      \color{bannercolor}\rule{\textwidth}{0.2pt}
+    \end{textblock*}
+    % Banner text aligned under the left edge of the line
+    \begin{textblock*}{9cm}(3.5cm,7.92cm)
+      \color{bannercolor}\tiny Confidential \& Proprietary
+    \end{textblock*}
+  }
+}{}
