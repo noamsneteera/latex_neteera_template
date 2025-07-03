@@ -3,7 +3,7 @@
 % Theme and color
 \usetheme{Warsaw}
 \usepackage{xcolor}
-\graphicspath{{../template/}}
+\graphicspath{{../latex_neteera_template/}{../../latex_neteera_template/}}
 \definecolor{neteeraBG}{RGB}{248,248,248}
 \definecolor{bannercolor}{RGB}{86,114,127}
 
@@ -16,9 +16,9 @@
 \usepackage[absolute,overlay]{textpos}
 
 % Metadata
-\title[Short Title]{Full Title of the Presentation}
-\author{Your Name}
-\date{\today}
+\title[\shorttitle]{\longtitle}
+\author{\myname}
+\date{\whichdate}
 
 % Custom title slide with background image and bannercolor text
 \makeatletter
@@ -42,18 +42,15 @@
 
 % Logo and banner only on normal slides
 \addtobeamertemplate{background}{
-  \ifbool{beamer@plainframe}{}{
-    % Logo (bottom-left)
-    \begin{textblock*}{4cm}(0.3cm,7.0cm)
-      \includegraphics[height=1.2cm]{neteera_logo.png}
-    \end{textblock*}
-    % Shortened horizontal rule above banner
-    \begin{textblock*}{9cm}(3.5cm,7.75cm)
-      \color{bannercolor}\rule{\textwidth}{0.2pt}
-    \end{textblock*}
-    % Banner text aligned under the left edge of the line
-    \begin{textblock*}{9cm}(3.5cm,7.92cm)
-      \color{bannercolor}\tiny Confidential \& Proprietary
-    \end{textblock*}
-  }
+    \ifbool{beamer@plainframe}{}{
+        \begin{textblock*}{30pt}(0.02\paperwidth,0.855\paperheight)
+            \includegraphics[height=30pt]{neteera_logo.png}
+        \end{textblock*}
+        \begin{textblock*}{0.8\paperwidth}(0.17\paperwidth,0.92\paperheight)
+            \color{bannercolor}\rule{\textwidth}{0.3pt}
+        \end{textblock*}
+        \begin{textblock*}{0.8\paperwidth}(0.17\paperwidth,0.93\paperheight)
+            \color{bannercolor}\tiny Confidential \& Proprietary
+        \end{textblock*}
+    }
 }{}
