@@ -1,6 +1,5 @@
 \documentclass{beamer}
 
-% Theme and color
 \usetheme{Warsaw}
 \usepackage{xcolor}
 \graphicspath{{../latex_neteera_template/}{../../latex_neteera_template/}}
@@ -21,16 +20,17 @@
 \date{\whichdate}
 
 % Custom title slide with background image and bannercolor text
+\usepackage[absolute,overlay]{textpos}
 \makeatletter
 \defbeamertemplate*{title page}{bg image positioned}
 {
   \begin{tikzpicture}[remember picture,overlay]
     \node[at=(current page.center), inner sep=0] {
-      \includegraphics[width=\paperwidth,height=\paperheight]{neteera_title.png}
+      \includegraphics[width=1.05\paperwidth,height=0.8\paperheight]{neteera_title.png}
     };
   \end{tikzpicture}
 
-  \begin{textblock*}{10cm}(2cm,6cm)
+  \begin{textblock*}{10cm}(2.5cm,6cm)
     {\usebeamerfont{title}\color{bannercolor}\inserttitle\par}
     \vskip0.3cm
     {\usebeamerfont{author}\color{bannercolor}\insertauthor\par}
