@@ -6,8 +6,9 @@ A professional Beamer presentation template with Neteera branding.
 
 - `template.tex` - Main template file with customizable variables
 - `preamble.tex` - Beamer configuration and styling
-- `title.tex` - Title slide content
+- `title.tex` - Title slide and table of contents with automatic two-column layout
 - `thank_you.tex` - Thank you slide content
+- `test.tex` - Test file demonstrating template features
 
 ## Images
 
@@ -44,3 +45,4 @@ This allows projects anywhere on your system to find the template images without
 - "Confidential & Proprietary" footer
 - Custom title slide with background image
 - Professional color scheme (RGB 86,114,127)
+- Automatic table of contents with smart column splitting (switches to 2 columns when content exceeds 75% of slide height)
