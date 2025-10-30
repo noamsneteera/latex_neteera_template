@@ -14,6 +14,13 @@
 \usepackage[absolute,overlay]{textpos}
 \usepackage{multicol}
 
+% Command for full page image (fits between title and footer)
+\newcommand{\fullpageimage}[1]{%
+    \vspace{-0.2cm}%
+    \centering%
+    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{#1}%
+}
+
 % Metadata
 \title[\shorttitle]{\longtitle}
 \author{\myname}
